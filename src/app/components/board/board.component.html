@@ -1,0 +1,18 @@
+<div class="header">Tic-Tac-Toe</div>
+
+<div class="status">
+  🎮 <strong>Current Player:</strong> {{ winner ? 'Game Over' : currentPlayer }}
+</div>
+
+<div class="board">
+  <div
+    class="square"
+    *ngFor="let square of squares; let i = index"
+    [ngClass]="{ winning: winningCombo.includes(i) }"
+    (click)="makeMove(i)"
+  >
+    {{ square }}
+  </div>
+</div>
+
+<button class="restart-btn" (click)="restartGame()">🔄 Restart Game</button>

@@ -1,0 +1,94 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.header {
+  background-color: #007bff;
+  color: white;
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-align: center;
+  padding: 1rem;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 500px;
+}
+
+.status {
+  font-size: 1.2rem;
+  margin: 1rem 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding-top: 5rem;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  width: 100%;
+  max-width: 400px;
+}
+
+.square {
+  aspect-ratio: 1 / 1;
+  background-color: white;
+  border: 2px solid #007bff;
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.square:hover {
+  background-color: #e9f3ff;
+}
+
+.winning {
+  background-color: #c8f7c5 !important;
+}
+
+.restart-btn {
+  margin-top: 1.5rem;
+  padding: 0.6rem 1.5rem;
+  font-size: 1rem;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.restart-btn:hover {
+  background-color: #0056b3;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 600px) {
+  .header {
+    font-size: 2rem;
+  }
+
+  .square {
+    font-size: 2rem;
+  }
+
+  .status {
+    font-size: 1rem;
+  }
+
+  .board {
+    max-width: 100%;
+    gap: 8px;
+  }
+}
