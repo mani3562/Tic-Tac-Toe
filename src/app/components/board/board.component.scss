@@ -1,79 +1,107 @@
 :host {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  padding: 1rem;
+  justify-content: center; /* center vertically */
+  align-items: center;     /* center horizontally */
+  min-height: 100vh;
+  background: #1a1a3d; /* Match Home Page */
   font-family: 'Segoe UI', sans-serif;
+  color: white;
+  overflow: hidden; /* prevent scroll */
+  position: relative; /* for back button positioning */
+}
+
+.back-btn {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  background: transparent;
+  border: none;
+  font-size: 1.8rem;
+  color: white;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.back-btn:hover {
+  transform: scale(1.2);
+  color: #4facfe;
 }
 
 .header {
-  background-color: #007bff;
+  background: linear-gradient(to right, #4facfe, #00f2fe);
   color: white;
   font-size: 2.5rem;
   font-weight: bold;
   text-align: center;
   padding: 1rem;
-  border-radius: 8px;
+  border-radius: 12px;
   width: 100%;
   max-width: 500px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
 }
 
 .status {
   font-size: 1.2rem;
-  margin: 1rem 0;
+  margin: 1.5rem 0;
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  padding-top: 5rem;
 }
 
 .board {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
+  gap: 12px;
   width: 100%;
   max-width: 400px;
 }
 
 .square {
   aspect-ratio: 1 / 1;
-  background-color: white;
-  border: 2px solid #007bff;
+  background-color: #2a2a5e;
+  border: 2px solid #4facfe;
   font-size: 2.5rem;
   font-weight: bold;
-  color: #333;
+  color: white;
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 10px;
+  border-radius: 12px;
   cursor: pointer;
-  transition: background-color 0.2s;
+  transition: transform 0.2s, background-color 0.2s;
 }
 
 .square:hover {
-  background-color: #e9f3ff;
+  background-color: #3b3b7d;
+  transform: scale(1.05);
 }
 
 .winning {
-  background-color: #c8f7c5 !important;
+  background: linear-gradient(to right, #43e97b, #38f9d7) !important;
+  color: #1a1a3d !important;
+  font-weight: bold;
 }
 
 .restart-btn {
-  margin-top: 1.5rem;
-  padding: 0.6rem 1.5rem;
-  font-size: 1rem;
-  background-color: #007bff;
-  color: white;
+  margin-top: 2rem;
+  padding: 0.8rem 2rem;
+  font-size: 1.1rem;
+  background: linear-gradient(to right, #4facfe, #00f2fe);
+  color: black;
   border: none;
-  border-radius: 6px;
+  border-radius: 30px;
   cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
 }
 
 .restart-btn:hover {
-  background-color: #0056b3;
+  transform: scale(1.05);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.6);
 }
 
-/* Responsive Adjustments */
+/* Responsive */
 @media (max-width: 600px) {
   .header {
     font-size: 2rem;
@@ -89,6 +117,6 @@
 
   .board {
     max-width: 100%;
-    gap: 8px;
+    gap: 10px;
   }
 }
